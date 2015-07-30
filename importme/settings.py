@@ -38,6 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'portfolio',
+    'rest_framework',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -56,7 +58,7 @@ ROOT_URLCONF = 'importme.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'importme/templates'),],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -83,6 +85,7 @@ DATABASES = {
 }
 
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
@@ -99,10 +102,20 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
-STATICFILES_DIRS = (
-  os.path.join(BASE_DIR, 'importme/static/'),
-)
-#STATIC_ROOT = os.path.join(BASE_DIR, 'importme/static')
+
+STATIC_ROOT = '/static/'
 STATIC_URL = '/static/'
 
+
+STATICFILES_DIRS = (
+  os.path.join(BASE_DIR, 'static/'),
+)
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 

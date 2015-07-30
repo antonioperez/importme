@@ -1,0 +1,50 @@
+		<!--- blog posts -->
+<div class="container">
+	<div class="row" ng-controller='BlogController as blog' ng-init = "blog.getPosts(); blog.getTags()">
+		<div class='col-md-8' >
+			<div ng-repeat="post in posts">			
+					<h1 ><a href="#/{{post.user.username}}/posts/{{post.id}}" >{{post.subject}}</a>
+					</h1>
+					
+					<span> By: <a href="">{{post.user.username}}</a></span> 
+					<div class='pull-right'>
+						<span class='glyphicon glyphicon-tags' >
+							<span ng-repeat='tag in post.tags'><a class="" >{{tag.tag}}</a>&nbsp;</span>
+						</span>
+						<span class="glyphicon glyphicon-time"></span>{{post.created | date:'medium'}}
+					</div>
+					<br>
+					<hr>
+					<p ng-bind-html="post.content"></p>		
+			</div>
+			<div class="top-clear"></div>
+		</div>
+
+		<div class='col-md-4' >
+
+			<div class="panel panel-default">
+			    <div class="panel-heading">
+			        <h4>About</h4>
+			    </div>
+			    <div class='panel-body'>
+			    	<p>I like typing gibberish.<p>
+			    </div>
+			</div>
+
+						 
+			<div class="panel panel-default">
+			    <div class="panel-heading">
+			        <h4>Tags</h4>
+			    </div>
+			    <div class="panel-body">
+			        <ul class="list-group" >
+			            <li class="list-group-item" ng-repeat='tag in tagOpts'>
+			            	<a href="#/posts/tag/{{tag.id}}" class=''>{{tag.tag}}</a>
+			           	</li>
+			        </ul>
+			  	</div>
+			</div>
+		</div>
+	</div>
+</div>
+		

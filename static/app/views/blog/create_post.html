@@ -1,0 +1,31 @@
+<div class='row' ng-controller='BlogController as blog'>
+<form class="form-horizontal" ng-submit='blog.createPost()' ng-init='blog.getTags()'>
+	<div class="form-group">
+		<label for="subject" class="col-sm-2 control-label">Subject</label>
+		<div class="col-sm-10">
+			<input ng-model='newPost.subject' type="text" class="form-control" id="title" name="subject" placeholder="" required="">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="content" class="col-sm-2 control-label">Blog</label>
+		<div class="col-sm-10">
+			<textarea ng-model='newPost.content' class="form-control" rows="6" name="content" required=""></textarea>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="content" class="col-sm-2 control-label">Tags</label>
+		<div class="col-sm-10">
+			<select multiple ng-model='newPost.tags' ng-multiple="true" data-ng-options="tag.id as tag.tag for tag in tagOpts" >
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<button type="submit" class="btn btn-primary">
+				Submit
+			</button>
+		</div>
+	</div>
+</form>
+</div>
+

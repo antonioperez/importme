@@ -1,0 +1,26 @@
+<nav class="navbar navbar-inverse navbar-static-top" >
+  <div class="container-fluid">
+	<div class="navbar-header">
+      <a class="navbar-brand" href="#/" ng-class="{active: isActive('#')}">
+        <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>
+      </a>
+    </div>
+	<div class="collapse navbar-collapse" id="navLinks">
+      <ul class="nav navbar-nav">
+        <li><a href="#/" ng-class="{active: isActive('#/')}">Blog</a></li>
+        <li><a href="#/resume" ng-class="{active: isActive('#/resume')}">Resume</a></li>
+        <li><a href="#/portfolio" ng-class="{active: isActive('#/portfolio')}">Portfolio</a></li>
+      </ul>
+     <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown pull-right">
+          <a href="#/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{user}}<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li ><a href="#/create/post" ng-class="{active: isActive('#/create/post')}">Create</a></li>
+            <li class=''><a href="#/login" ng-class="{active: isActive('#/login')}">Login</a></li>
+            <li class=''><a href="/logout" >Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

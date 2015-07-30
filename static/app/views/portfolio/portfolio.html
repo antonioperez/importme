@@ -1,0 +1,32 @@
+<div class="container" ng-controller='PortfolioController as portfolio' ng-init='portfolio.getProjects()'>
+
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Portfolio
+                    <small>Projects worth talking about...</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-6 portfolio-item" ng-repeat='project in projects'>
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="{{project.website}}">{{project.title}}</a>
+
+                </h3>
+                <span class='pull-right'><a href='{{project.code}}'>Code</a></span>
+                <p>{{project.description}}</p>
+              
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+    </div>

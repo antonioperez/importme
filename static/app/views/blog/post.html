@@ -1,0 +1,18 @@
+		<div class='col-md-8' >
+			<div ng-repeat="post in posts">			
+					<h1 ><a href="{{post.user.username}}/posts/{{post.subject}}" >{{post.subject}}</a>
+					</h1>
+					
+					<span> By: <a href="">{{post.user.username}}</a></span> 
+					<div class='pull-right'>
+						<span class='glyphicon glyphicon-tags' >
+							<span ng-repeat='tag in post.tags'><a class="" >{{tag.tag}}</a>&nbsp;</span>
+						</span>
+						<span class="glyphicon glyphicon-time"></span>{{post.created | date:'medium'}}
+					</div>
+					<br>
+					<hr>
+					<p ng-bind-html="post.content"></p>		
+			</div>
+			<div class="top-clear"></div>
+		</div>
